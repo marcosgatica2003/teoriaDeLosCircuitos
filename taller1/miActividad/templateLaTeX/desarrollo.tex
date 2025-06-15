@@ -1,0 +1,164 @@
+\section{Ejercicio 1}
+\subsection{Consigna}
+\sangria{} \textit{Resolver el ejercicio 7 de la guía 1 con la siguiente modificación:} 
+\begin{itemize}[noitemsep] \item \textit{Reemplazar el inductor $L = 0,004H$ por un capacitor (circuito serie RC) de capacidad $C = 0,001F$} \item \textit{Realizar el planteo del ejercicio justificando en forma teórica, y luego la resolución numéricamente.} \end{itemize}
+
+\textbf{El ejercicio 7 de la guía 1 decía:}
+\sangria{} \textit{Por un circuito serie RL con R = $5\Omega$ y L = $0,004H$ circula una corriente como la figura 7 (1 en este caso). Calcular y graficar $v_{R(t)}$ y $v_{L(t)}$}
+
+\imagen[Gráfico del ejercicio]{8cm}{./imagenes/graficoCircuitoSerieEjercicio7Guia1.png}
+
+\subsection{Resolución}
+    \begin{center}
+        \begin{circuitikz}
+            \draw (0,0) to[R, l=$\text{R=}5\Omega$] (3,0)
+            to [L, l=$\text{L=}0.004H$] (5,0);
+        \end{circuitikz}
+    \end{center}
+
+    Modificado a:
+    \begin{center}
+        \begin{circuitikz}
+            \draw (0,0) to[R, l=$\text{R=}5\Omega$] (3,0)
+            to [C, l=$\text{C=}0.001F$] (5,0);
+        \end{circuitikz}
+    \end{center}
+    
+    Y las incógnitas pasan a ser $v_{R(t)}$ y $v_{C(t)}$. El detalle aquí es que no se indica con qué carga se analiza el circuito con ese condensador, es decir, se desconoce el valor de $v_{C(t_0)}$. El desarrollo propuesto se tomará con que el capacitor se encuentra sin carga, es decir, asumiendo que: \\[-1cm]
+    \ecuacion{$v_{C(t_0)} = 0$} 
+
+    \textbf{Parametrización de la curva:} \\[5pt]
+    $
+    i_{(t)}
+    \begin{cases}
+        2500t, & \text{para } t \in [0;2ms) \\
+        5, & \text{para } t \in [2ms; 4ms) \\
+        -2500t + 10, & \text{para } t \in [4ms; 6ms)  \\
+        -5, & \text{para } t \in [6ms; 8ms)  
+    \end{cases}
+    $ [A] \\[5pt]
+    Se sabe por Ley de Ohm que:
+    \ecuacion{v_{R(t)} = i_(t) \cdot R}
+    Por lo que:\\
+    $
+    v_{R(t)}
+    \begin{cases}
+        12500t, & \text{para } t \in [0;2ms) \\
+        25, & \text{para } t \in [2ms; 4ms) \\
+        -12500t + 50, & \text{para } t \in [4ms; 6ms) \\
+        -25, & \text{para } t \in [6ms; 8ms)
+    \end{cases}
+    $ [V] \\[5pt]
+
+    \newpage
+    
+    \imagen[$v_{R(t)}$]{8cm}{./imagenes/ejercicio1VR.png}
+
+    El voltaje del capacitor en un circuito idealizado es de:
+
+    \[ v_{C(t)} = \frac{1}{0,001F} \int_{t_0}^t i_{(t)}dt + v_{C(t_0)} \]
+
+    Según los demás gráficos, el capacitor en t = 0 debería estar cargándose, por lo que comenzó sin carga. Énfasis en cómo aumenta la corriente linealmente y la tensión de la resistencia, si el capacitor estuviese cargado, $i_{(t=0)} \neq 0$ \\
+
+    \underline{Tramo 1:} $0 \leq t < 2ms$
+    \[ v_{C(t)} = 1000F^{-1} \int_{0}^t 2500tdt \]
+    \[ v_{C(t)} = 1000\cdot1250t^2\rvert_0^t \]
+    \[ v_{C(t)} = 1,25\cdot10^6 t^2 [V] \]
+
+    \underline{Tramo 2:} $2ms \leq t < 4ms$
+    \[ v_{C(t)} = 1000F^{-1} \int_{2m}^t  5   dt + v_{C(t=2ms)} \]
+    \[ v_{C(t)} = 5000 t\rvert_{2m}^t + 5 \]
+    \[ v_{C(t)} = 5000 (t - 0,002) + 5 \]
+    \[ v_{C(t)} = 5000t - 5 [V]\]
+
+    \underline{Tramo 3:} $4ms \leq t < 6ms$
+    \[ v_{C(t)} = 1000F^{-1} \int_{4m}^t  (-2500t+10)   dt + v_{C(t=4ms)} \]
+    \[ v_{C(t)} = 1000 \cdot (-1250t^2+10t)\rvert_{4m}^t + 15 \]
+    \[ v_{C(t)} = 1000 \cdot (-1250t^2+10t-0,02) + 15 \]
+    \[ v_{C(t)} = (-1,25\cdot10^6)t^2+10^4t+13 [V]\]
+    
+    \newpage
+
+    \underline{Tramo 4:} $6ms \leq t < 8ms$
+    \[ v_{C(t)} = 1000F^{-1} \int_{6m}^t  -5   dt + v_{C(t=6ms)} \]
+    \[ v_{C(t)} = -5000 \int_{6m}^t   +28  dt  \]
+    \[ v_{C(t)} = -5000\cdot t\rvert_{6m}^t+28 \]
+    \[ v_{C(t)} = -5000\cdot (t-0,006)+28 \]
+    \[ v_{C(t)} = -5000\cdot t +58 [V] \]
+    
+    Por lo que: \\
+    $
+    v_{C(t)}
+    \begin{cases}
+        1,25\cdot 10^6t^2, & \text{para } t \in [0;2ms) \\
+        5000t-15, & \text{para } t \in [2ms; 4ms) \\
+        -1,25\cdot10^6t^2+10^4t-15, & \text{para } t \in [4ms; 6ms) \\
+        -5000t+30, & \text{para } t \in [6ms; 8ms)
+    \end{cases}
+    $ [V] \\[5pt]
+
+    \imagen[]{8cm}{./imagenes/ejercicio1VC.png}
+\section{Ejercicio 2}
+\subsection{Consigna}
+\sangria{} \textit{Resolver el ejercicio 4 de la guía 2 con la siguiente modificación:} \begin{itemize} \item \textit{Considerar una nueva corriente $i_{2(t)} = i_{(t)}$ si $i_{(t)} \geq 0$, si no $i_{2(t)} = 0 $ (es decir igual a la gráfica en los pulsos positivos y 0 cuando los pulsos se van al negativo)} \item \textit{Realizar el planteo del ejercicio justificando en forma teórica y luego la resolución numéricamente.} \end{itemize}
+
+\textbf{El ejercicio 4 de la guía 2 decía:}\\
+\textit{Calcular el valor medio de la corriente cuya forma se muestra en la figura 4, y la potencia que esta disipará al circular por un resistor R = $10\Omega$}
+\imagen{8cm}{./imagenes/graficoCorrienteValorMedioEjercicio4Guia2.png}
+
+\newpage
+\subsection{Resolución}
+
+\sangria{} El valor de la corriente media es:
+{\Large \[ I_{2med} = \inv{\tau} \int_{t_0}^t i_{(t)}dt \]}
+
+Se asume que en los tramos donde la corriente se corta, como en 1 a 2 segundos, el valor medio es 0, o es lo mismo que:
+
+{ \[ I_{2med} = \inv{\tau} \int_{t_1}^{t_2} i_{(t)}dt = 0 \]}
+
+El valor medio de esta señal queda como la suma de las contribuciones donde $I_2 \neq 0 \wedge I_2 > 0$
+
+{\Large \[ I_{2med} = \sum_{k = 1}^{15}\inv{\tau}\int_{k-1}^k i_{(t)} dt \]}
+
+0 a 1s:
+\ecuacion{i_{2med1} = \inv{1s}\int_0^1\frac{4-5}{1}t + 5dt}
+\ecuacion{i_{2med1} = \frac{9}{2}A}
+2 a 3s:
+\ecuacion{i_{2med2} = \inv{3s-2s}\int_2^3\frac{2-3}{3-2}t + 5dt}
+\ecuacion{i_{2med2} = \frac{5}{2}A}
+4 a 5s:
+\ecuacion{i_{2med3} = \inv{5s-4s}\int_4^5\frac{0-1}{5-4}t + 5dt}
+\ecuacion{i_{2med3} = \frac{1}{2}A}
+6 a 7s:
+\ecuacion{i_{2med4} = \inv{7s-6s}\int_6^7\frac{2-1}{7-6}t -5dt}
+\ecuacion{i_{2med4} = \frac{3}{2}A}
+8 a 9s:
+\ecuacion{i_{2med5} = \inv{9s-8s}\int_8^9\frac{4-3}{9-8}t -5dt}
+\ecuacion{i_{2med5} = \frac{7}{2}A}
+10 a 11s:
+\ecuacion{i_{2med6} = \inv{11s-10s}\int_{10}^{11}\frac{4-5}{11-10}t + 15dt}
+\ecuacion{i_{2med6} = \frac{9}{2}A}
+12 a 13s:
+\ecuacion{i_{2med7} = \inv{13s-12s}\int_{13}^{12}\frac{2-3}{13-12}t + 15dt}
+\ecuacion{i_{2med7} = \frac{5}{2}A}
+14 a 15s:
+\ecuacion{i_{2med8} = \inv{15s-14s}\int_{15}^{14}\frac{0-1}{15-14}t + 15dt}
+\ecuacion{i_{2med8} = \frac{1}{2}A}
+Entonces:
+\[
+I_{2med} = \frac{36}{8}A = 2,5A 
+\]
+
+\newpage
+
+\textbf{Potencia media que disipará un resistor de $10\Omega$ si es atravesada por esa corriente:} \\
+
+La potencia media de un resistor que es atravesado por una corriente $i_(t)$ es:
+\begin{center}\Large
+\[
+    P_{med} = R \cdot I^2_{med}
+\]
+\end{center}
+Esto es válido siempre y cuando $i_{(t)}$ sea constante. Para este caso, la potencia está en función del valor medio de la corriente, por lo que es posible su uso.
+\ecuacion{P_{med} = 10\Omega (2,5A)^2}
+\ecuacion{P_{med} = 62,5W}
