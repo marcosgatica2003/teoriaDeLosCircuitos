@@ -1,0 +1,212 @@
+format long e
+echo off
+clc;
+fprintf('\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n');
+fprintf('                  M�TODO DE MALLAS');
+fprintf('\n');
+fprintf('                  Desarrollado por : Ing. Juan Jose Garcia Abad');
+fprintf('\n\n\n\n\n\n\n\n\n\n\n\n\n\n\');
+
+
+
+Num_Mallas=input('\nN�mero de mallas ?  ');
+
+if  Num_Mallas==1 
+   Z11=input('\nValor de Z11 ?  ');
+   E1=input('\nTensi�n de la malla 1 ?  ');
+   I1=E1/Z11;
+   fprintf('La corriente I1 es : %8.4f Amperes \n\n',I1);
+end
+
+if  Num_Mallas==2 
+   Z11=input('\nValor de Z11 ?  ');
+   Z12=input('\nValor de Z12 ?  ');
+   Z21=Z12;
+   Z22=input('\nValor de Z22 ?  ');
+   E1=input('\nTensi�n de la malla 1 ?  ');
+   E2=input('\nTensi�n de la malla 2 ?  ');
+   DET_P=det([Z11 -Z12;-Z12 Z22]);
+   DET_S1=det([E1 -Z12;E2 Z22]); 
+   DET_S2=det([Z11 E1;-Z12 E2]);
+   I1=DET_S1/DET_P;
+   I2=DET_S2/DET_P;
+   fprintf('\n\n');
+   fprintf('        | %8.4f   %8.4f    |\n',Z11,-Z12);
+   fprintf('DET_P = | %8.4f   %8.4f    |\n',-Z12,Z22);
+   fprintf('\n\n');
+   
+   fprintf('DET_P =  %8.4f \n',DET_P);
+   
+   fprintf('\n\n');
+   fprintf('         | %8.4f   %8.4f   |\n',E1,-Z12);
+   fprintf('DET_S1 = | %8.4f   %8.4f   |\n',E2,Z22);
+   fprintf('\n\n');
+   
+   fprintf('DET_S1 =  %8.4f \n',DET_S1);
+   
+   fprintf('\n\n');
+   fprintf('         | %8.4f   %8.4f   |\n',Z11,E1);
+   fprintf('DET_S2 = | %8.4f   %8.4f   |\n',-Z12,E2);
+   fprintf('\n\n');
+   
+   fprintf('DET_S2 =  %8.4f \n',DET_S2);
+
+   fprintf('\n\n');
+   fprintf('\n\n');
+   fprintf('La corriente I1 es : %8.4f Amperes ',I1);
+   fprintf('\n\n');
+   fprintf('La corriente I2 es : %8.4f Amperes \n\n',I2);
+
+   
+   
+end
+
+if  Num_Mallas==3 
+   Z11=input('\nValor de Z11 ?  ');
+   Z12=input('\nValor de Z12 ?  ');
+   Z21=Z12;
+   Z13=input('\nValor de Z13 ?  ');
+   Z31=Z13;
+   Z22=input('\nValor de Z22 ?  ');
+   Z23=input('\nValor de Z23 ?  ');
+   Z32=Z23;
+   Z33=input('\nValor de Z33 ?  ');
+   E1=input('\nTensi�n de la malla 1 ?  ');
+   E2=input('\nTensi�n de la malla 2 ?  ');
+   E3=input('\nTensi�n de la malla 3 ?  ');
+   DET_P=det([Z11 -Z12 -Z13;-Z21 Z22 -Z23;-Z31 -Z32 Z33]);
+   DET_S1=det([E1 -Z12 -Z13;E2 Z22 -Z23;E3 -Z23  Z33]); 
+   DET_S2=det([Z11 E1 -Z13;-Z21 E2 -Z23;-Z31 E3 Z33]);
+   DET_S3=det([Z11 -Z12 E1;-Z21 Z22 E2;-Z31 -Z32 E3]);
+   I1=DET_S1/DET_P;
+   I2=DET_S2/DET_P;
+   I3=DET_S3/DET_P;
+   fprintf('\n\n');
+   fprintf('        | %8.4f   %8.4f   %8.4f   |\n',Z11,-Z12,-Z13);
+   fprintf('DET_P = | %8.4f   %8.4f   %8.4f   |\n',-Z12,Z22,-Z23);
+   fprintf('        | %8.4f   %8.4f   %8.4f   |\n',-Z13,-Z23,Z33);
+   fprintf('\n\n');
+   
+   fprintf('DET_P =  %8.4f \n',DET_P);
+   
+   fprintf('\n\n');
+   fprintf('         | %8.4f   %8.4f   %8.4f   |\n',E1,-Z12,-Z13);
+   fprintf('DET_S1 = | %8.4f   %8.4f   %8.4f   |\n',E2,Z22,-Z23);
+   fprintf('         | %8.4f   %8.4f   %8.4f   |\n',E3,-Z23,Z33);
+   fprintf('\n\n');
+   
+   fprintf('DET_S1 =  %8.4f \n',DET_S1);
+   
+   fprintf('\n\n');
+   fprintf('         | %8.4f   %8.4f   %8.4f   |\n',Z11,E1,-Z13);
+   fprintf('DET_S2 = | %8.4f   %8.4f   %8.4f   |\n',-Z12,E2,-Z23);
+   fprintf('         | %8.4f   %8.4f   %8.4f   |\n',-Z13,E3,Z33);
+   fprintf('\n\n');
+   
+   fprintf('DET_S2 =  %8.4f \n',DET_S2);
+   
+   fprintf('\n\n');
+   fprintf('         | %8.4f   %8.4f   %8.4f   |\n',Z11,-Z12,E1);
+   fprintf('DET_S3 = | %8.4f   %8.4f   %8.4f   |\n',-Z12,Z22,E2);
+   fprintf('         | %8.4f   %8.4f   %8.4f   |\n',-Z13,-Z23,E3);
+   fprintf('\n\n');
+   
+   fprintf('DET_S3 =  %8.4f \n',DET_S3);
+
+   fprintf('\n\n');
+   
+   fprintf('La corriente I1 es : %8.4f Amperes ',I1);
+   fprintf('\n\n');
+   fprintf('La corriente I2 es : %8.4f Amperes',I2);
+   fprintf('\n\n');
+   fprintf('La corriente I3 es : %8.4f Amperes \n\n',I3);
+
+end
+
+if  Num_Mallas==4 
+   Z11=input('\nValor de Z11 ?  ');
+   Z12=input('\nValor de Z12 ?  ');
+   Z21=Z12;
+   Z13=input('\nValor de Z13 ?  ');
+   Z31=Z13;
+   Z14=input('\nValor de Z14 ?  ');
+   Z41=Z14;
+   Z22=input('\nValor de Z22 ?  ');
+   Z23=input('\nValor de Z23 ?  ');
+   Z32=Z23;
+   Z24=input('\nValor de Z24 ?  ');
+   Z42=Z24;
+   Z33=input('\nValor de Z33 ?  ');
+   Z34=input('\nValor de Z34 ?  ');
+   Z43=Z34;
+   Z44=input('\nValor de Z44 ?  ');
+
+   E1=input('\nTensi�n de la malla 1 ?  ');
+   E2=input('\nTensi�n de la malla 2 ?  ');
+   E3=input('\nTensi�n de la malla 3 ?  ');
+   E4=input('\nTensi�n de la malla 4 ?  ');
+   DET_P=det([Z11 -Z12 -Z13 -Z14;-Z21 Z22 -Z23 -Z24;-Z31 -Z32 Z33 -Z34;-Z41 -Z42 -Z43 Z44]);
+   DET_S1=det([E1 -Z12 -Z13 -Z14;E2 Z22 -Z23 -Z24;E3 -Z32 Z33 -Z34;E4 -Z42 -Z43 Z44]); 
+   DET_S2=det([Z11 E1 -Z13 -Z14;-Z21 E2 -Z23 -Z24;-Z31 E3 Z33 -Z34;-Z41 E4 -Z43 Z44]);
+   DET_S3=det([Z11 -Z12 E1 -Z14;-Z21 Z22 E2 -Z24;-Z31 -Z32 E3 -Z34;-Z41 -Z42 E4 Z44]);
+   DET_S4=det([Z11 -Z12 -Z13 E1;-Z21 Z22 -Z23 E2;-Z31 -Z32 Z33 E3;-Z41 -Z42 -Z43 E4]);
+   I1=DET_S1/DET_P;
+   I2=DET_S2/DET_P;
+   I3=DET_S3/DET_P;
+   I4=DET_S4/DET_P;
+   
+   fprintf('\n\n');
+   fprintf('        | %8.4f   %8.4f   %8.4f   %8.4f   |\n',Z11,-Z12,-Z13,-Z14);
+   fprintf('DET_P = | %8.4f   %8.4f   %8.4f   %8.4f   |\n',-Z21,Z22,-Z23,-Z24);
+   fprintf('        | %8.4f   %8.4f   %8.4f   %8.4f   |\n',-Z31,-Z32,Z33,-Z34);
+   fprintf('        | %8.4f   %8.4f   %8.4f   %8.4f   |\n',-Z41,-Z42,-Z43,Z44);
+   fprintf('\n\n');
+   
+   fprintf('DET_P =  %8.4f \n',DET_P);
+   
+   fprintf('\n\n');
+   fprintf('        | %8.4f   %8.4f   %8.4f   %8.4f   |\n',E1,-Z12,-Z13,-Z14);
+   fprintf('DET_S1= | %8.4f   %8.4f   %8.4f   %8.4f   |\n',E2,Z22,-Z23,-Z24);
+   fprintf('        | %8.4f   %8.4f   %8.4f   %8.4f   |\n',E3,-Z32,Z33,-Z34);
+   fprintf('        | %8.4f   %8.4f   %8.4f   %8.4f   |\n',E4,-Z42,-Z43,Z44);   
+   fprintf('\n\n');
+   
+   fprintf('DET_S1 =  %8.4f \n',DET_S1);
+   
+   fprintf('\n\n');
+   fprintf('        | %8.4f   %8.4f   %8.4f   %8.4f   |\n',Z11,E1,-Z13,-Z14);
+   fprintf('DET_S2= | %8.4f   %8.4f   %8.4f   %8.4f   |\n',-Z21,E2,-Z23,-Z24);
+   fprintf('        | %8.4f   %8.4f   %8.4f   %8.4f   |\n',-Z31,E3,Z33,-Z34);
+   fprintf('        | %8.4f   %8.4f   %8.4f   %8.4f   |\n',-Z41,E4,-Z43,Z44);
+   fprintf('\n\n');
+   
+   fprintf('DET_S2 =  %8.4f \n',DET_S2);
+   
+   fprintf('\n\n');
+   fprintf('        | %8.4f   %8.4f   %8.4f   %8.4f   |\n',Z11,-Z12,E1,-Z14);
+   fprintf('DET_S3= | %8.4f   %8.4f   %8.4f   %8.4f   |\n',-Z21,Z22,E2,-Z24);
+   fprintf('        | %8.4f   %8.4f   %8.4f   %8.4f   |\n',-Z31,-Z32,E3,-Z34);
+   fprintf('        | %8.4f   %8.4f   %8.4f   %8.4f   |\n',-Z41,-Z42,E4,Z44);
+   fprintf('\n\n');
+   
+   fprintf('DET_S3 =  %8.4f \n',DET_S3);
+
+   fprintf('\n\n');
+   fprintf('        | %8.4f   %8.4f   %8.4f   %8.4f   |\n',Z11,-Z12,-Z13,E1);
+   fprintf('DET_S4= | %8.4f   %8.4f   %8.4f   %8.4f   |\n',-Z21,Z22,-Z23,E2);
+   fprintf('        | %8.4f   %8.4f   %8.4f   %8.4f   |\n',-Z31,-Z32,Z33,E3);
+   fprintf('        | %8.4f   %8.4f   %8.4f   %8.4f   |\n',-Z41,-Z42,-Z43,E4);
+   fprintf('\n\n');
+   
+   fprintf('DET_S4 =  %8.4f \n',DET_S4);
+   fprintf('\n\n');
+   fprintf('La corriente I1 es : %8.4f Amperes ',I1);
+   fprintf('\n\n');
+   fprintf('La corriente I2 es : %8.4f Amperes',I2);
+   fprintf('\n\n');
+   fprintf('La corriente I3 es : %8.4f Amperes',I3);
+   fprintf('\n\n');
+   fprintf('La corriente I4 es : %8.4f Amperes \n\n',I4);
+
+
+end

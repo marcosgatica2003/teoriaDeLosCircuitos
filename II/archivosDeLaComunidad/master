@@ -1,0 +1,7 @@
+0000000000000000000000000000000000000000 abea2f7698147af4f2fd2d03d086ac3f1cc20fea fnavarro <facunava92@gmail.com> 1602984166 -0300	commit (initial): primer
+abea2f7698147af4f2fd2d03d086ac3f1cc20fea aca0d0d8cd20edf9caa4078ff53a127a52761a55 fnavarro <facunava92@gmail.com> 1602992302 -0300	commit: Agrego un par de FT de finales de 2017
+aca0d0d8cd20edf9caa4078ff53a127a52761a55 90fac5ea20b6e8bf0d815b52feb4ece032728a04 fnavarro <facunava92@gmail.com> 1603468804 -0300	commit: Agrego mas scripts
+90fac5ea20b6e8bf0d815b52feb4ece032728a04 cdc7505bb9ec1712ba40395675aebb59b131b135 fnavarro <facunava92@gmail.com> 1604276415 -0300	commit: Agrego hasta filtros de cheby
+cdc7505bb9ec1712ba40395675aebb59b131b135 d79cd543bc296a5752b96193cfff069761bc426c fnavarro <facunava92@gmail.com> 1604422993 -0300	commit: Agrego Nyquist y Routh mejorados
+d79cd543bc296a5752b96193cfff069761bc426c 5d236ec0870153807a2833d2c75cd763defbd389 fnavarro <facunava92@gmail.com> 1605544503 -0300	commit: Agrego casi todo hasta filtros
+5d236ec0870153807a2833d2c75cd763defbd389 e9c0ec5bda1e34fb45d67da699fdc37150016749 fnavarro <facunava92@gmail.com> 1605889163 -0300	commit: Post final

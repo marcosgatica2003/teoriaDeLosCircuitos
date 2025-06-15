@@ -1,0 +1,17 @@
+Descomprimir los archivos sobre el subdirectorio de trabajo de MATLAB.
+
+"CUADRI.M" sirve para determinar los par'ametros de impedancia y de transmision 
+directa de un cuadripolo.
+Permite ademas calcular la impedancia iterativa y la impedancia imagen , si el 
+cuadripolo fuera simetrico calcula impedancia caracteristica. 
+Trabaja con impedancias ( R +- jX).
+
+
+"CONEX_CUADRI.M"  sirve para hacer el calculo de coneccion serie, paralelo y 
+cascada de dos cuadripolos, esta diseñado para trabajar solo con resistores. 
+En el mismo subdirectorio deben guardarse los archivos de imagen siguientes:
+Cuad_a.jpg
+Cuad_B.jpg
+CASCADA.jpg
+SERIE.jpg
+PARALELO.jpg 

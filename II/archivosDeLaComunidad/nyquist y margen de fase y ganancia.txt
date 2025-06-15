@@ -1,0 +1,16 @@
+==========margen de ganancia========
+
+k=6;
+gh=tf(k,([1,2,4,0]))
+
+=========como representar nyquist==========
+
+num= ([10, 20])
+
+den = ([1, -2, 5, 0, 0])
+
+gn=tf((num),(den))
+
+nyquist(gn)
+
+allmargin(gn)

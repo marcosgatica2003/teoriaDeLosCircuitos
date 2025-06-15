@@ -1,0 +1,2 @@
+ los scripts estan hechos en octave, necesitas instalar los paquietes sympy, symbolic, control
+ sympy necesita python

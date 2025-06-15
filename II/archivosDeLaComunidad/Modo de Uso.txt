@@ -1,0 +1,20 @@
+Gráfica de Bode, Fase y Módulo, con asintotas.
+
+
+num=rand(1,5);  
+den=rand(1,6);  
+bode_asymptotic(num,den);                     **** Función para graficar...
+
+
+----------------------------------------------------------------------------------------------------------------------
+
+
+Es decir, en lugar de calcular la función de transferencia, directamente ingresamos el vector numerador y denominador.
+
+
+
+USO DEL FILE-M
+
+Copiar el archivo "bode_asymptotic.m" al Workspace de trabajo, luego ejecutar de la forma "bode_asymptotic(num,den);".
+
+Gustavo

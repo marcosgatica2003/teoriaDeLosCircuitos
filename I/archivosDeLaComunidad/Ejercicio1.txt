@@ -1,0 +1,92 @@
+clear all; close all;
+
+
+% Tension del circuito
+
+
+v1=54*exp(i*30*pi/180)
+
+
+
+% impedancias propias de malla
+
+z11=8+16-6i
+
+z22=16+5i
+
+z33=22+9i-6i
+
+
+
+% impedancias compartidas entre mallas 
+
+z12=-16
+
+z13=6i
+
+z23=0
+
+
+
+%matriz de impedancias
+
+
+z= [ z11, z12, z13;
+   
+  z12, z22, z23;
+     
+z13, z23, z33]
+
+
+
+
+%vectro tension de mallas 
+v=[v1;0;0]
+
+%resultado: corriente de mallas
+I=inv(z)*v;
+
+I1=I(1)
+I2=I(2)
+I3=I(3)
+
+%Convierte de cartesiano a polar
+[I1a,I1m]=cart2pol(real(I1),imag(I1))
+[I2a,I2m]=cart2pol(real(I2),imag(I2))
+[I3a,I3m]=cart2pol(real(I3),imag(I3))
+
+%determinante de z
+detz=det(z)
+
+%calculos auxiliares
+s1=z;
+s1(:,1)=v;
+dets1=det(s1)
+
+s2=z;
+s2(:,2)=v;
+dets2=det(s2)
+
+s3=z;
+s3(:,3)=v;
+dets3=det(s3)
+
+%determinante por cramer
+disp(' ' );           % como un printf
+dets1 / detz
+dets2 / detz
+dets3 / detz
+
+%Grafica 
+t=0:0.001:1;
+vt=54*sqrt(2)*cos(100*t*30*pi/180);
+it=I1m*sqrt(2)*cos(100*t+I1a)
+
+plot(t,vt);
+hold on;
+plot (t,it,'r');
+
+figure;
+plotyy(t,vt,t,it);         %otra forma de graficarlo
+
+

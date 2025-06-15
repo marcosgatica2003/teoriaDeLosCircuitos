@@ -1,0 +1,34 @@
+Metodología de 10 puntos, como solía tomar antes pero incorporando algunos temas 
+nuevos. Tiempo: 2:15 hs.
+
+1.CIRCUITO RLC SERIE. Te daba la función de transferencia y L, pedía calcular wo, 
+cita, R, Rc, C, V, corriente para tiempo infinito y cero, y después decir que tipo 
+de raíces y que el comportamiento del circuito.
+
+2. FUNCIÓN DE TRANSFERENCIA. Era un circuito pi, con RCR, tenías que sacar la 
+función de transferencia, pasarla a jw, evaluar para ciertos omegas, diagrama 
+polar y decir si atenuaba o no, o si adelantaba/atrasaba.
+
+3. FIND BODE. Te daba el gráfico de bode de módulo y tenias que sacar la función 
+de transferencia y valor de un pedestal.
+
+4. BODE. Te daba la función de transferencia con una cuadrática abajo con raíces 
+complejas, había que graficarlo y corregirlo empleando una fórmula teórica.
+
+5. NYQUIST. Te daba la mitad de la gráfica y había que completarla, y decir 
+rodeos y estabilidad. (Parecido a ejercicios del aula virtual).
+
+6. RUTH-HURWITZ. Desde la función G(P)H(P) que te daba, pedía hacerlo y decir 
+raices numerados, denominador, rodeos en nyquist, estabilidad.
+
+7. CUADRIPOLO. Desde un cuadripolo tipo T cargado con Zim2, pedia Zin y los 
+parámetros ABCD.
+
+8. TRANSFORMACIÓN DE CUADRIPOLOS. Pasar de un cuadripolo pi a T y calcular Zin, 
+con una Zout que te daba.
+
+9. FILTRO PASA BANDA. Pedía tipo de filtro, wo, wc1, wc2, BW, Ro.
+
+10. FILTRO PASA ALTOS M-DERIVADO. El filtro ya estaba m-derivado solo con los 
+valores de los componentes, había que sacar el valor de m, wc, fc, Zo y w de 
+infinito.

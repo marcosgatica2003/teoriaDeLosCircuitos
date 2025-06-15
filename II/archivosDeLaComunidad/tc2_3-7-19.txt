@@ -1,0 +1,8 @@
+#Teoriadecircuitos2
+
+03.07.19
+Metodologia de muchos puntos
+1. Funcion de tranferencia +Diagrama polar + Diagrama de bode. 
+2. Nyquist + RH
+3. Filtro kcte elimina banda
+4. Filtro butterworth pasa bajo nornalizado pasar a pasa altos.

@@ -1,0 +1,26 @@
+clear all; close all;
+
+% Tension del circuito
+i1=2;
+i2=(50/(10+30i));
+
+
+% admitancias propias de malla
+y11=(1/(5+5i))+(1/(10+30i));
+
+i=i1-i2;
+v1=inv(y11)*i
+%v2=(i/y11)
+
+
+
+%resultado :D
+io=(v1+50)/(10+30i)
+
+%siendo v=50
+
+
+
+
+
+

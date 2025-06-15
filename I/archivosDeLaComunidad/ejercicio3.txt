@@ -1,0 +1,80 @@
+TERMINAR, EN LA FOTO ESTA COMO SEGUIR.!!!!!
+
+
+
+
+
+
+clear all; close all;
+
+
+
+% Tension del circuito
+v1=180;
+
+
+
+
+
+% impedancias  propias de malla
+
+z11=28-12i;
+z22=13+15i;
+
+
+
+% impedancias  compartidas
+z12=-13;
+
+
+%matriz impedancias
+
+z= [z11 ,z12;
+    
+   z12 ,z22;]
+
+
+
+
+
+
+%vector tensiones de mallas
+
+v=[v1;0];
+
+
+
+
+%resultado corriente de mallas
+
+i=inv(z)*v;
+
+
+
+
+%resultado de corrientes
+
+
+i1=i(1)
+
+i2=i(2)
+
+
+%corrientes en polar
+
+i1=cart2pol(real(i1),imag(i1))
+
+
+i2=cart2pol(real(i2),imag(i2))
+
+
+
+%potencias
+
+
+
+%activa: (v1*
+
+
+
+

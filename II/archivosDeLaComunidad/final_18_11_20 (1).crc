@@ -1,0 +1,9 @@
+C:\Users\Sueldo\Desktop\Teoria 2020\03_Finales y Parciales\Final_18_11_20\final_18_11_20 (1).sch
+V1 1 0 1 1
+R1 1 0 20000 0
+R2 3 1 20000 0
+R3 2 0 1778 0
+C1 3 1 0.0001 0
+C2 2 3 0 0
+.OUT 3
+.END

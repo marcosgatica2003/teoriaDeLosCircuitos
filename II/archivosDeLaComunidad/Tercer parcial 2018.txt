@@ -1,0 +1,6 @@
+1) Adaptador como 2017 
+2) Atenuador tipo L
+3) Filtro pasa altos 2017
+4) Filtro pasa banda 2017 
+5) Desarrollo de z1m y z2m
+6) Curvas de kct y Zo de T y Pi
